@@ -1,0 +1,54 @@
+-- Compilador SQL Online
+-- https://www.programiz.com/sql/online-compiler
+
+-- 1ª QUESTÃO ----------------------------------------------------------------------
+-- Criando a tabela para armazenar os contatos.
+CREATE TABLE Contatos (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    telefone TEXT,
+    email TEXT
+);
+
+
+-- 2ª QUESTÃO ----------------------------------------------------------------------
+-- Adicionando amigos à tabela usando INSERT INTO.
+
+-- Contato 1 
+INSERT INTO Contatos (nome, telefone, email)
+VALUES ('João Santos', '(71) 98877-1234', 'joao.santos@email.com');
+
+-- Contato 2 
+INSERT INTO Contatos (nome, telefone, email)
+VALUES ('Maria Oliveira', '(79) 99654-9876', 'maria.oliveira@email.com');
+
+-- Contato 3 
+INSERT INTO Contatos (nome, telefone, email)
+VALUES ('José Pereira', '(85) 98123-4567', 'jose.pereira@email.com');
+
+
+-- 3ª QUESTÃO ----------------------------------------------------------------------
+-- Visualizando todas as colunas de todos os contatos.
+SELECT * FROM Contatos;
+
+-- Selecionando apenas o contato específico usando o filtro WHERE.
+SELECT * FROM Contatos WHERE nome = 'José Pereira';
+
+
+-- 4ª QUESTÃO ----------------------------------------------------------------------
+-- Atualizando o telefone do contato de ID 3.
+UPDATE Contatos
+SET telefone = '(79) 99999-9999'
+WHERE id = 3;
+
+-- Verificando a alteração.
+SELECT * FROM Contatos;
+
+
+-- 5ª QUESTÃO ----------------------------------------------------------------------
+-- Deletando o registro do João Santos.
+DELETE FROM Contatos
+WHERE nome = 'João Santos';
+
+-- Verificando se a exclusão funcionou (A lista agora deve ter apenas Maria e José).
+SELECT * FROM Contatos;
